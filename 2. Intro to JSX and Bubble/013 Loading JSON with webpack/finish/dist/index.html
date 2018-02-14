@@ -1,0 +1,19 @@
+<!-- we are tying to load json data and react dependencies using webpack. 
+instead of using script links to react and react dom to install these libraries via npm we first ran the command npm install react react-dom --save then we removed these 2 links from current index file. we imported react and react-dom in index.js and lib.js files
+
+for json data we created lib.js (not necessary to use json) and titles.json files inside src folder and typed what is inside there. also we modified the index.js file to link lib.js properly, and we modified lib.js to import titles.json.
+we added json-loader inside webpack.config to process json data. after we installed it via command, npm install json-loader --save-dev
+
+finally we ran the command npm start to launch the website (note that we cannot directly launch index.html or use httpster server in this case)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World with React</title>
+</head>
+<body>
+    <div id="react-container"></div>
+    <script type="text/javascript" src="assets/bundle.js"></script>
+</body>
+</html>

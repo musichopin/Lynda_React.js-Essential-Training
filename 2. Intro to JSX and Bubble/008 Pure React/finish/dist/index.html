@@ -1,0 +1,28 @@
+<!-- in order to start files inside server we first installed httpster globally with this command: npm install -g httpster. then we got into current finish directory using cd command. then we ran httpster using this command (port is optional): httpster -d ./dist -p 3000 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://fb.me/react-15.1.0.js"></script>
+    <script src="https://fb.me/react-dom-15.1.0.js"></script>
+    <meta charset="UTF-8">
+    <title>Hello World with React</title>
+</head>
+<body>
+    <div id="react-container"></div>
+    <script src="index.js"></script>
+</body>
+</html>
+
+<!-- reactta dinamik işlemler curly braces ile belirtilir -->
+<!-- js <-> react virtual dom <-> browser dom ilişkisi sayesinde react hız kazanır -->
+
+<!-- jsx readability için babel ise transformation için kullanılır -->
+
+<!-- curly braces event durumunda, subcomponentı map() method ile print ederken, fonksiyonu çağırdıktan sonra return edilen value'yu print ederken ({this.f()}), ternary operatorda body'deki değerleri print ederken (<p>{(this.state.checked) ? "checked" : "unchecked"}</p>), subcomponentta inherit edilen state (kendine göre prop olur) veya props print edilirken ({this.props...}), state'i super componentta print ederken ({this.state.var}), html attribute'a  state'i veya props'u value olarak yazarken, string haricinde property (number, boolean, function, array, obj, obj property etc) subcomponenta pass ederken kullanılır -->
+
+<!-- react componentları irdelerken pure component mi jsx mi olduğu, component yaratılıp yaratılmadığı (yaratılmazsa return sta içi doğrudan render() içinde kullanılır), component yaratılmadıysa (return sta içinin) variable'a atanıp atanmadığı önem taşır -->
+
+<!-- we can install multiple packages at once: npm install package1 package2 package3 --save-dev -->
+
+<!-- we can create components in 3 different ways: createClass, ES6 class and stateless functional component -->

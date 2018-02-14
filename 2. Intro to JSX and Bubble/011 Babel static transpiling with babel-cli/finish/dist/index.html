@@ -1,0 +1,25 @@
+<!-- 
+we are trying to transform jsx to js before run time to get faster by using babel-cli.
+we first targeted the finish directory using cd command
+we later created package.json file with npm init command (node.js shud be installed)
+we installed babel-cli both locally and globally with commands, npm install babel-cli --save-dev     and     npm install -g babel-cli  
+we placed the index.js file into newly created src folder.
+in order to overcome compatibility issues we created .babelrc file and wrote what is inside there. then we locally installed the packages of babel-preset-latest, babel-preset-react and babel-preset-stage-0 at once using command line: npm install babel-preset-latest babel-preset-react babel-preset-stage-0 --save-dev
+now that babel-cli package is installed we do our transformation and create a js file inside dist folder by typing command, babel ./src/index.js --out-file ./dist/bundle.js
+on this index.html we changed our src to the new bundle.js file, changed type and removed the babel-core script source
+to launch server easily we changed the scripts obj inside package.json so that we can start the server by just typing npm start in finish folder
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://fb.me/react-15.1.0.js"></script>
+    <script src="https://fb.me/react-dom-15.1.0.js"></script>
+    </script>
+    <meta charset="UTF-8">
+    <title>Hello World with React</title>
+</head>
+<body>
+    <div id="react-container"></div>
+    <script type="text/javascript" src="bundle.js"></script>
+</body>
+</html>

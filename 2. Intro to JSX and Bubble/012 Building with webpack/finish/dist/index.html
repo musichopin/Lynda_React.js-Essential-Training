@@ -1,0 +1,29 @@
+<!-- we want to use webpack for jsx tranforming to js (which babel-cli does without webpack as well), loading css, transpiling scss to css, loading json, using import statements; and doing all these at one http request
+
+in order to transpile jsx to js before run time, we can use module bundlers like webpack as an alternative to babel-cli
+webpack creates a bundle file which packages script, dependecies, css and json into one file, thus making only one request
+
+we first created webpack.config.js file and added babel-loader
+then we locally installed the packages of babel-loader, webpack and webpack-dev-server at once using command line: npm install babel-loader webpack webpack-dev-server --save-dev
+in order to create bundle.js file we ran webpack command but when we ran webpack command we encountered a problem so we either install webpack globally (npm install -g webpack) and then run webpack command or we dig webpack out from node_modules folder using this command node_modules\.bin\webpack
+on this index.html we changed our src to the new bundle.js file, changed type and removed the babel-core script source
+to use webpack server efficiently (ie to have the web page automatically loaded when we edit & save index.js (not bundle.js) inside src folder and to run server by just typing npm start) we replaced "httpster -d ./dist -p 3000" with "./node_modules/.bin/webpack-dev-server" inside package.json.
+
+notlar:
+- projede webpack komutu en son kullanılır. webpack-server proje esnasında kullanılır ki src folderda yaptığımız değişiklik anında browserda gözüksün 
+- webpack komutu kullanınca oluşan bundle.js file size src folder size a göre değişir
+- bundle.js file yaratılınca index.html doğrudan launch edilebilir veya httpster ile serve edilebilir
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://fb.me/react-15.1.0.js"></script>
+    <script src="https://fb.me/react-dom-15.1.0.js"></script>
+    <meta charset="UTF-8">
+    <title>Hello World with React</title>
+</head>
+<body>
+    <div id="react-container"></div>
+    <script type="text/javascript" src="assets/bundle.js"></script>
+</body>
+</html>

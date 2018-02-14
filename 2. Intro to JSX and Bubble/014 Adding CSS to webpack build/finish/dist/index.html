@@ -1,0 +1,20 @@
+<!-- we can bundle our css using webpack so that we dont have to make additional http requests
+we first created hello.css and goodbye.scss files (webpack transpile scss into css) and typed the content.
+then we configured webpack.config.js file and added 2 groups of loaders for css and scss
+we later installed packages with this command: npm install style-loader css-loader autoprefixer-loader sass-loader node-sass --save-dev
+lastly we edited lib.js file by adding our class names hello and goodbye as well as importing links for hello.css and goodbye.scss files
+to launch our server we typed npm start
+
+(eventually we happen to use webpack for jsx tranforming to js which babel-cli had done, loading css, transpiling scss to css, loading json, using import statements; and doing all these at one http request)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World with React</title>
+</head>
+<body>
+    <div id="react-container"></div>
+    <script type="text/javascript" src="assets/bundle.js"></script>
+</body>
+</html>
