@@ -8,8 +8,8 @@ export const AddDayForm = ({ resort,
 	
 	let _resort, _date, _powder, _backcountry
 
-// we are doing 2 way databinding: passing data from child to parent app component using
-// refs and then changes in state data causes skidaycount and skidaylist comps to render
+//doing 2 way databinding: passing data from this child to parent app component using
+//refs and then changes in state data causes skidaycount and skidaylist comps to render
 	const submit = (e) => {
 		e.preventDefault()
 		onNewDay({
@@ -46,7 +46,6 @@ export const AddDayForm = ({ resort,
 				<input id="powder" 
 					   type="checkbox" 
 					   defaultChecked={powder}	
-					   ref="powder"
 					   ref={input => _powder = input}/>
 				<label htmlFor="powder">Powder Day</label>
 			</div>
@@ -55,7 +54,6 @@ export const AddDayForm = ({ resort,
 				<input id="backcountry" 
 					   type="checkbox"
 					   defaultChecked={backcountry} 
-					   ref="backcountry"
 					   ref={input => _backcountry = input}/>
 				<label htmlFor="backcountry">
 					Backcountry Day

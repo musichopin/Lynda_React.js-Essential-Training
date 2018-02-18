@@ -17,11 +17,11 @@ const tahoeResorts = [
 
 class Autocomplete extends Component {
 	
-	get value() { // grabs the value of whatever ref is
+	get value() { // grabs the value of whatever ref is (??)
 		return this.refs.inputResort.value
 	}
 
-	set value(inputValue) { // sets the ref value to whatever input value is
+	set value(inputValue) { // sets the ref value to whatever input value is(??)
 		this.refs.inputResort.value = inputValue
 	}
 

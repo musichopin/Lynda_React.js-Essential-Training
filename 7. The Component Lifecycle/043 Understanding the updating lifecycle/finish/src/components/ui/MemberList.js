@@ -3,10 +3,10 @@ import fetch from 'isomorphic-fetch'
 import Member from './Member'
 
 class MemberList extends Component {
-// sırasıyla constructor, componentWillMount, render ve componentDidMount çağırılır
-    constructor(props) { console.log("constructor")
+
+    constructor(props) {
         super(props)
-        this.state = {
+        this.state = { // holds state
             members: [],
             loading: false,
             administrators: []
@@ -15,20 +15,13 @@ class MemberList extends Component {
         this.removeAdmin = this.removeAdmin.bind(this)
     }
 
-//sırayla shouldComponentUpdate, componentWillUpdate, render, componentDidUpdate çağırılır
-    componentWillUpdate() {console.log("willupdate")}
-
-    componentDidUpdate() {console.log("didupdate")}
-
-    componentWillMount() { console.log("willmount") }
-
-    componentDidMount() { console.log("didmount")
+    componentDidMount() { // alt: componentWillMount
         this.setState({loading: true})
         fetch('https://api.randomuser.me/?nat=US&results=12')
             .then(response => response.json())
             .then(json => json.results)
             .then(members => this.setState({
-                members,
+                members: members,
                 loading: false
             }))
     }
@@ -53,8 +46,7 @@ class MemberList extends Component {
         this.setState({administrators})
     }
 
-
-    render() { console.log("render")
+    render() {
     	const { administrators, members, loading } = this.state
         return (
             <div className="member-list">

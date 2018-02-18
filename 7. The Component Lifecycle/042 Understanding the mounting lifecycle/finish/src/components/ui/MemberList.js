@@ -3,7 +3,7 @@ import fetch from 'isomorphic-fetch' // we npm installed and it connects to api
 import Member from './Member'
 
 class MemberList extends Component {
-// sırasıyla constructor, componentWillMount, render ve componentDidMount çağırılır
+
     constructor(props) { 
         super(props)
         this.state = {
