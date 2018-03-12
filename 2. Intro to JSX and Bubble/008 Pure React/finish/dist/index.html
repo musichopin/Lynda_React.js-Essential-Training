@@ -30,10 +30,11 @@ in order to start files inside server we first installed httpster globally with 
 <!-- we can create components in 3 different ways: createClass, ES6 class and stateless functional component -->
 
 <!-- component lifecycles: 
-mounting cycles (es6'de constructor getDefaultProps ve GetInitialState yerine kullanılır): getDefaultProps-GetInitialState-componentWillMount-render-componentDidMount
+mounting cycles (es6'de class syntaxi kullanırken constructorda tanımlanan state ve prop, getDefaultProps ve GetInitialState yerine kullanılır): getDefaultProps-GetInitialState-componentWillMount-render-componentDidMount
 updating cycles: 
 componentWillReceiveProps-shouldComponentUpdate-componentWillUpdate-render-componentDidUpdate
 unmounting cycles:
 componentWillUnmount
 
-(aynı component içinde) getInitialState() ile set edilmiş objecti setState() ile modifiye etmek shouldComponentUpdate(nextProps) sonrası cycleı; getDefaultProps() ile set edilmiş objecti setProps() ile modifiye etmek componentWillReceiveProps(nextProps) sonrası cycleı tetikler -->
+getInitialState() ile set edilmiş objecti setState() ile modifiye etmek shouldComponentUpdate(nextProps) sonrası cycleı tetikler. ancak super componenttaki state subcomponentta property olacağı için bu durumda supercomponentta setState() demek subcomponentta componentWillReceiveProps(nextProps) sonrası cycle'ı tetikler.
+getDefaultProps() ile set edilmiş objecti setProps() ile modifiye etmek componentWillReceiveProps(nextProps) sonrası cycleı tetikler -->
