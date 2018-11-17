@@ -13,28 +13,3 @@ in order to start files inside server we first installed httpster globally with 
     <script src="index.js"></script>
 </body>
 </html>
-
-<!-- reactta dinamik işlemler curly braces ile belirtilir -->
-<!-- js <-> react virtual dom <-> browser dom ilişkisi sayesinde react hız kazanır -->
-
-<!-- jsx readability için babel ise transformation için kullanılır -->
-
-<!-- curly braces event durumunda, subcomponentı map() method ile print ederken, fonksiyonu çağırdıktan sonra return edilen value'yu print ederken ({this.f()}), ternary operatorda body'deki değerleri print ederken (<p>{(this.state.checked) ? "checked" : "unchecked"}</p>), subcomponentta inherit edilen state (kendine göre prop olur) veya props print edilirken ({this.props...}), state'i super componentta print ederken ({this.state.var}), html attribute'a  state'i veya props'u value olarak yazarken, string haricinde property (number, boolean, function, array, obj, obj property etc) subcomponenta pass ederken kullanılır -->
-
-<!-- react componentları irdelerken pure component mi jsx mi olduğu, component yaratılıp yaratılmadığı (yaratılmazsa return sta içi doğrudan render() içinde kullanılır), component yaratılmadıysa (return sta içinin) variable'a atanıp atanmadığı önem taşır -->
-
-<!-- return sta sonrası birden fazla element var ise div içerisine alınmalı. return sta sonrasındaki yazılar alt satırda başlıyorsa (return sta'ın yanından başlayan) parantez kullanılmalı. return sta sonrası kullanılan noktalı virgül önem taşımaz -->
-
-<!-- we can install multiple packages at once: npm install package1 package2 package3 --save-dev -->
-
-<!-- we can create components in 3 different ways: createClass, ES6 class and stateless functional component -->
-
-<!-- component lifecycles: 
-mounting cycles (es6'de class syntaxi kullanırken constructorda tanımlanan state ve prop, getDefaultProps ve GetInitialState yerine kullanılır): getDefaultProps-GetInitialState-componentWillMount-render-componentDidMount
-updating cycles: 
-componentWillReceiveProps-shouldComponentUpdate-componentWillUpdate-render-componentDidUpdate
-unmounting cycles:
-componentWillUnmount
-
-getInitialState() ile set edilmiş objecti setState() ile modifiye etmek shouldComponentUpdate(nextProps) sonrası cycleı tetikler. ancak super componenttaki state subcomponentta property olacağı için bu durumda supercomponentta setState() demek subcomponentta componentWillReceiveProps(nextProps) sonrası cycle'ı tetikler.
-getDefaultProps() ile set edilmiş objecti setProps() ile modifiye etmek componentWillReceiveProps(nextProps) sonrası cycleı tetikler -->
